@@ -1,0 +1,3 @@
+/home/whs/CLionProjects/Diplevel1_final_project/cmake-build-debug/CMakeFiles/Diplevel1_final_project.dir
+/home/whs/CLionProjects/Diplevel1_final_project/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/whs/CLionProjects/Diplevel1_final_project/cmake-build-debug/CMakeFiles/rebuild_cache.dir
