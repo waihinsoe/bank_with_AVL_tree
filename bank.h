@@ -614,7 +614,7 @@ void registration() {
 }
 
 void userSector(struct info current_user_data) {
-    space_counter();
+//    space_counter();
     char input[2];
     printf("############# This is userSector section ############### \n");
     printf("Press 1 to Transfer Money:\nPress 2 to Cash in :\nPress 3 to Cash out:\nPress 4 to Loan:\nPress 5 Exit");
