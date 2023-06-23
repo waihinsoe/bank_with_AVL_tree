@@ -401,9 +401,11 @@ void insert_data_to_file(FILE *fptr,struct node* root)
     struct info data = root->data;
     fprintf(fptr,"%u %s %s %s %s %s %s %u %s %u %d %u",data.id, data.name, data.nrc, data.email, data.password,data.phNumber, data.address, data.cur_amount, data.pOrb, data.loan_amount, data.acc_level, data.transAmoLimitPerDay);
     int index = root->data.id -1; //id start 1 , so its index is 0.
-    if(space_array[0] != 0) {
+
         for (int i = 0; i < space_array[index]-11; ++i) {
-            fprintf(fptr, " %s", data.trc[i].note);
+            if(data.trc[i].note[0] != '\0') {
+                fprintf(fptr, " %s", data.trc[i].note);
+            }
         }
 
         if(data.trc[space_array[index]-12].note[0] != '?') {
@@ -413,7 +415,7 @@ void insert_data_to_file(FILE *fptr,struct node* root)
         for (int i = 0; i < cash_in_out_space_array[index]; ++i) {
             fprintf(fptr," %s", data.crc[i].note);
         }
-    }
+
 
 
     fprintf(fptr,"%c",'\n');
@@ -614,7 +616,7 @@ void registration() {
 }
 
 void userSector(struct info current_user_data) {
-//    space_counter();
+    space_counter();
     char input[2];
     printf("############# This is userSector section ############### \n");
     printf("Press 1 to Transfer Money:\nPress 2 to Cash in :\nPress 3 to Cash out:\nPress 4 to Loan:\nPress 5 Exit");
@@ -822,15 +824,15 @@ void space_counter() {
             }
         }
 
-//        for (int j = 0; j < 50; ++j) {
-//            printf(" %d ",space_array[j]);
-//        }
-//        printf("\n");
-//
-//        for (int i = 0; i < 50; ++i) {
-//            printf(" %d ", cash_in_out_space_array[i]);
-//        }
-//        printf("\n");
+        for (int j = 0; j < 50; ++j) {
+            printf(" %d ",space_array[j]);
+        }
+        printf("\n");
+
+        for (int i = 0; i < 50; ++i) {
+            printf(" %d ", cash_in_out_space_array[i]);
+        }
+        printf("\n");
     }
 }
 
